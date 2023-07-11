@@ -1,9 +1,19 @@
 import React from 'react'
+import TodoItem from './TodoItem'
 
-export default function TodosList() {
+export default function TodosList({ todosProps, handleChange, delTodo }) {
   return (
     <div>
-      <h1>todo list will go here</h1>
+      <ul>
+        {todosProps.map((todo) => (
+          <TodoItem 
+          key={todo.id} 
+          itemProps={todo} 
+          handleChange={handleChange} 
+          delTodo={delTodo}
+          />
+        ))}
+      </ul>
     </div>
   )
 }
