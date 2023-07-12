@@ -19,16 +19,17 @@ export default function InputTodo({ addTodoItem }) {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-container">
         <input 
         type="text"
         value={title}
         onChange={handleChange}
         placeholder="Add Todo..."
+        className="input-text"
         />
-        <button>Submit</button>
+        <button className="input-submit">Submit</button>
     </form>
-    <span>{message}</span>
+    <span className="submit-warning">{message}</span>
     </div>
   )
 }
