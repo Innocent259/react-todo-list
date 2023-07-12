@@ -43,6 +43,17 @@ export default function TodosLogic() {
       })
     ])
   };
+  const setUpdate = (updatedTitle, id) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          todo.title = updatedTitle;
+        }
+        return todo;
+      })
+    );
+  };
+
   const addTodoItem = (title) => {
     const newTodo = {
       id: uuidv4(),
@@ -57,7 +68,10 @@ export default function TodosLogic() {
       <TodosList 
       todosProps={todos} 
       handleChange={handleChange} 
-      delTodo={delTodo} />
+      delTodo={delTodo} 
+      setUpdate={setUpdate}
+      />
+      
     </div>
   )
 }
